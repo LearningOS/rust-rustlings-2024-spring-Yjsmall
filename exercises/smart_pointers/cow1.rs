@@ -61,7 +61,7 @@ mod tests {
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
             // TODO
-            Cow::Borrowed(vec) => Ok(assert_eq!(*vec, vec![0, 1, 2])),
+            Cow::Owned(vec) => Ok(assert_eq!(*vec, vec![0, 1, 2])),
             _ => Err("Expected borrowed value"),
         }
     }
