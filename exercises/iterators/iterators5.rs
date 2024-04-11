@@ -33,6 +33,8 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map is a hashmap with String keys and Progress values.
     // map = { "variables1": Complete, "from_str": None, ... }
+    // NOTE: 这里的可以使用==原因是实现PartialEq
+    // v == &value就是比较两者的值
     map.values().into_iter().filter(|&v| v == &value).count()
 }
 
